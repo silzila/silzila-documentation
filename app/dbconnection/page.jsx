@@ -1,0 +1,145 @@
+import Image from 'next/image';
+import React from 'react';
+import styles from "./page.module.css"
+import SelectDb from "../../public/selectDB.png";
+import Database from "../../public/database.png";
+import FillAll from "../../public/fillOutContent.png";
+import TestConformation from "../../public/testSuccess.png";
+import DbDisplay from "../../public/Dbdisplay.png";
+import RegisterSuccess from "../../public/registerSuccess.png";
+import DbEditDelete from "../../public/DbEditDelete.png";
+import DbEdit from "../../public/DBEditPage.png";
+import DeleteConformationMessage from "../../public/Deletemsg.png";
+import AssureOfDelete from "../../public/DbDeleteConform.png";
+import Databases from "../../public/DbSelect.png";
+
+const DBConnect = () => {
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Connect to Data via DB Connections</h2>
+      <h3 className={styles.head}>In this article</h3>
+      <div className={styles.paragraph}>
+       <ol className={styles.orderedList}>
+          <li><p>Create DB Connection</p></li>
+          <li><p>Database Testing</p></li>
+          <li><p>Database Register</p></li>
+          <li><p>List of Created DATABASE</p></li>
+          <li><p>EDIT and DELETE existing Database</p>
+            <ul className={styles.unOrderList}>
+              <li>EDIT</li>
+              <li>DELETE</li>
+            </ul>
+          </li>
+        </ol>
+        </div>
+            
+      <p className={styles.paragraphs}>To connect to database, from the Home screen click '+' button in DB Connections.</p>
+      <span className={styles.image}> 
+        <Image src={SelectDb} alt='+ Button in DB Connections' className={styles.img}/>
+      </span>
+      <div className={styles.margin}>
+      <h3 className={styles.head}>Create DB Connection</h3>
+      <p className={styles.paragraph}>Then, the Create DB Connection window appears. Here, you can choose from different databases to which Silzila can connect.</p>
+      <p className={styles.paragraph}>With Silzila, you can connect to different types of databases. These sources include,</p>
+      <ol className={styles.orderedList}>
+        <li><p>PostgreSql</p></li>
+        <li><p>MySql</p></li>
+        <li><p>Ms SQL Server</p></li>
+        <li><p>Amazon Redshift</p></li>
+      </ol>
+       <span className={styles.image}> 
+        <Image src={Databases} alt='+ Button in Database'
+         className={styles.img}/>
+      </span>
+
+      <div className={styles.margin}>
+      <p className={styles.paragraphs}>After selecting the database fill the following details correctly on corresponding fields,</p>
+      <ol className={styles.orderedList}>
+        <li><p>Vendor - Here, Select the database that you consume.</p></li>
+        <li><p>Server Url - Enter Server url.</p></li>
+        <li><p>Port - Enter Port Number.</p></li>
+        <li><p>Database - Enter the name of your Database.</p></li>
+        <li><p>User Name - Enter your Database UserName.</p></li>
+        <li><p>Password - Enter your Database Password.</p></li>
+        <li><p>Connection Name - Give your database a name to work with Silzila and use that database in Silzila with that name.</p></li>
+      </ol>
+      </div>
+      <span className={styles.image}> 
+        <Image src={Database} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      <div className={styles.margin}>
+      <p className={styles.paragraphs}>All fields must be filled, if you leave any field empty, 
+        then Silzila will shows the following window,</p>
+      </div>
+      <span className={styles.image}> 
+        <Image src={FillAll} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>Database Testing</h3>
+      <p className={styles.paragraph}>Fill all the fields and then click the test button.</p>
+      <p className={styles.paragraph}>After the test process is completed, you will get following popup window else check and correct the entered information.</p>
+      <span className={styles.image}> 
+        <Image src={TestConformation} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>Database Register</h3>
+      <p className={styles.paragraph}>After the test process got completed, click the register button and then your database will connected to Silzila.</p>
+      <p className={styles.paragraph}>For conformation, you will get a data connection successful conformation popup window.</p>
+      <span className={styles.image}> 
+        <Image src={RegisterSuccess} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>List of Created DATABASE</h3>
+      <p className={styles.paragraph}>After completing the registration process all the database will be displayed under DATABASE CONNECTIONS on home screen.</p>
+      <p className={styles.paragraph}>With the name what you gave as a connection name.</p>
+      <span className={styles.image}> 
+        <Image src={DbDisplay} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>EDIT and DELETE existing Database</h3>
+      <p className={styles.paragraph}>After complition of database creation, if you want to do any editing or deletion in existing databases.</p>
+      <p className={styles.paragraph}>Then, click this icon 'EYE' icon on corresponding Database.</p>
+      <span className={styles.image}> 
+        <Image src={DbEditDelete} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>EDIT</h3>
+      <p className={styles.paragraph}>After that, the following screen will appear for editing, here you can change what you want to change in existing database.</p>
+      <p className={styles.paragraph}>For that click the EDIT Button.</p>
+      <p className={styles.paragraph}>After editing again make Test and Register as same as we done before.</p>
+      <p className={styles.paragraph}>Now all the changes will be applied in the existing database.</p>
+      <span className={styles.image}> 
+        <Image src={DbEdit} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+
+      <div className={styles.margin}>
+      <h3 className={styles.head}>DELETE</h3>
+      <p className={styles.paragraph}>For delete the existing database, click on DELETE Button instead of EDIT Button.</p>
+      <p className={styles.paragraph}>Then, the confirmation window will appear for deletion,</p>
+      <span className={styles.image}> 
+        <Image src={AssureOfDelete} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      <div className={styles.margin}>
+      <p className={styles.paragraph}>Before click DELETE Button, assure on deletion then click DELETE Button, else click the Cancel.</p>
+      <p className={styles.paragraph}>If you click DELETE then you will get the confirmation window and then corresponding database deleted permanantly from Silzila.</p>
+      </div>
+      <span className={styles.image}> 
+        <Image src={DeleteConformationMessage} alt='+ Button in Database' className={styles.img}/>
+      </span>
+      </div>
+     </div>
+  )
+}
+
+export default DBConnect

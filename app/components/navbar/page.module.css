@@ -1,0 +1,30 @@
+.container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.link{
+    display: flex;
+    text-decoration: none;
+    color: darkblue;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.link:hover{
+  cursor: pointer;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    padding-left: 5px;
+}
+
+
+
+
+
