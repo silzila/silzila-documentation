@@ -1,59 +1,50 @@
 .container{
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 10vh 80vh;
-  grid-template-areas: 
-  "nv nv nv nv nv"
-  "sd ch ch ch ch";
+  grid-template-columns:280px 1fr 1fr 1fr 280px;
+  grid-template-rows: 6vh auto;
+  grid-template-areas:
+  "nv nv nv nv nv" 
+  "sd-L ch ch ch ch";
 }
 
 .navbar{
   grid-area: nv;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
-
-.navbar{
-  top:0px;
 }
 
 .sidebar{
-  position: fixed;
-  grid-area: sd;
-}
-
-.sidebar{
-  top: 10vh;
+  grid-area: sd-L;
 }
 
 .children{
   grid-area: ch;
 }
 
+.active{
+ color:green;
+}
 
-@media (max-width:800px) {
+@media (max-width:750px) {
   .sidebar{
     display: none;
   }
 
   .container{
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 15vh 85vh;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 6vh auto;
   grid-template-areas: 
-  "nv nv nv nv nv"
-  "ch ch ch ch ch";
-  padding-left: 10px;
-  padding-right: 10px;
-  }
-   
-  .navbar{
-   grid-area: nv;
+  "nv nv nv"
+  "ch ch ch ";
   }
 
+  .navbar{
+    grid-area: nv;
+  }
+  
   .children{
   grid-area: ch;
   }
-
-  }
+}

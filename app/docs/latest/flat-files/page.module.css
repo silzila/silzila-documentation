@@ -1,0 +1,139 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+ .container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 280px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'mn mn mn sb';
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    grid-area: mn;
+    padding-left: 60px;
+    padding-top: 20px;
+    background-color: #fbfbff;
+    border-left: 1.5px solid rgb(239, 238, 238);
+    border-right: 1.5px solid rgb(239, 238, 238);
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    grid-area: sb;
+    position: fixed;
+    right: 100px;
+}
+
+.paragraph{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.heading{
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+.head{
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.image{
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .img{
+     width: auto;
+     margin-right: 60px;
+     height: 100%;
+     object-fit: contain;
+     border: 1px solid lightgrey;
+ }
+
+ .link{
+    text-decoration: none;
+    color:#15989a;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color:#a890d8; 
+    cursor: pointer;
+}
+
+.content{
+    font-size: 15px;
+    opacity: 0.8;
+   }
+
+.unOrderedList{
+ list-style-type: none;
+}
+
+.margin{
+    margin-top: 25px;
+ }
+
+ .rightlink{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: 600;
+    line-height: 25px;
+  }
+
+  .rightlink:hover{
+    cursor: pointer;
+    padding: 1px 2px;
+    border: 2px solid #af99db;
+    border-radius: 4px;
+    color:black; 
+    opacity: 0.99;
+  } 
+
+  @media (max-width:1000px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+     }     
+    
+    .container{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 280px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'mn mn mn mn';
+    }
+    
+    .main{
+       display: flex;
+       flex-direction: column;
+       grid-area: mn;
+       display: block;
+       padding-left: 60px;
+       padding-top: 20px;
+       padding-right: 40px;
+       background-color: #fbfbff;
+       border-left: 1.5px solid rgb(239, 238, 238);
+       border-right: 1.5px solid rgb(239, 238, 238);
+    }
+
+    .sub{
+        display: none;
+    }
+  }

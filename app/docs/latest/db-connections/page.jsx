@@ -1,45 +1,32 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from "./page.module.css"
-import SelectDb from "../../public/selectDB.png";
-import Database from "../../public/database.png";
-import FillAll from "../../public/fillOutContent.png";
-import TestConformation from "../../public/testSuccess.png";
-import DbDisplay from "../../public/Dbdisplay.png";
-import RegisterSuccess from "../../public/registerSuccess.png";
-import DbEditDelete from "../../public/DbEditDelete.png";
-import DbEdit from "../../public/DBEditPage.png";
-import DeleteConformationMessage from "../../public/Deletemsg.png";
-import AssureOfDelete from "../../public/DbDeleteConform.png";
-import Databases from "../../public/DbSelect.png";
+import SelectDb from "../../../../public/selectDB.png";
+import Database from "../../../../public/database.png";
+import FillAll from "../../../../public/fillOutContent.png";
+import TestConformation from "../../../../public/testSuccess.png";
+import DbDisplay from "../../../../public/Dbdisplay.png";
+import RegisterSuccess from "../../../../public/registerSuccess.png";
+import DbEditDelete from "../../../../public/DbEditDelete.png";
+import DbEdit from "../../../../public/DBEditPage.png";
+import DeleteConformationMessage from "../../../../public/Deletemsg.png";
+import AssureOfDelete from "../../../../public/DbDeleteConform.png";
+import Databases from "../../../../public/DbSelect.png";
+import Link from 'next/link';
 
 const DBConnect = () => {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.main}>
+      
       <h2 className={styles.heading}>Connect to Data via DB Connections</h2>
-      <h3 className={styles.head}>In this article</h3>
-       <ol>
-          <li><p className={styles.paragraph}>Create DB Connection</p></li>
-          <li><p className={styles.paragraph}>Database Testing</p></li>
-          <li><p className={styles.paragraph}>Database Register</p></li>
-          <li><p className={styles.paragraph}>List of Created DATABASE</p></li>
-          <li><p className={styles.paragraph}>EDIT and DELETE existing Database</p>
-            <ul className={styles.unOrderList}>
-              <li>EDIT</li>
-              <li>DELETE</li>
-            </ul>
-          </li>
-        </ol>
-      </div>  
-            
       <p className={styles.paragraph}>To connect to database from the Home screen, click '+' button in DB Connections.</p>
-      <span className={styles.image}> 
+      <span className={styles.image}  id='create-db'> 
         <Image src={SelectDb} alt='+ Button in DB Connections' className={styles.img}/>
       </span>
 
       <div className={styles.margin}>
-      <h3 className={styles.head}>Create DB Connection</h3>
+      <h3 className={styles.head} >Create DB Connection</h3>
       <p className={styles.paragraph}>Then, the Create DB Connection window appears. Here, you can choose from different databases to which Silzila can connect.</p>
       <p className={styles.paragraph}>With Silzila, you can connect to different types of databases. These sources include,</p>
       <ol>
@@ -73,16 +60,16 @@ const DBConnect = () => {
       <div className={styles.margin}>
       <p className={styles.paragraph}>All fields must be filled, if you leave any field empty, 
         then Silzila will shows the following window,</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='testing'> 
         <Image src={FillAll} alt='Fill out all the Fields' className={styles.img}/>
       </span>
       </div>
 
       <div className={styles.margin}>
-      <h3 className={styles.head}>Database Testing</h3>
+      <h3 className={styles.head} >Database Testing</h3>
       <p className={styles.paragraph}>Fill all the fields and then click the test button.</p>
       <p className={styles.paragraph}>After the test process is completed, you will get following popup window else check and correct the entered information.</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='register'> 
         <Image src={TestConformation} alt='Test Connection Successful' className={styles.img}/>
       </span>
       </div>
@@ -91,7 +78,7 @@ const DBConnect = () => {
       <h3 className={styles.head}>Database Register</h3>
       <p className={styles.paragraph}>After the test process got completed, click the register button and then your database will connected to Silzila.</p>
       <p className={styles.paragraph}>For conformation, you will get a data connection successful conformation popup window.</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='list-db'> 
         <Image src={RegisterSuccess} alt='Register Successful' className={styles.img}/>
       </span>
       </div>
@@ -100,7 +87,7 @@ const DBConnect = () => {
       <h3 className={styles.head}>List of Created DATABASE</h3>
       <p className={styles.paragraph}>After completing the registration process all the database will be displayed under DATABASE CONNECTIONS on home screen.</p>
       <p className={styles.paragraph}>With the name what you gave as a connection name.</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='edit-delete'> 
         <Image src={DbDisplay} alt='Database List' className={styles.img}/>
       </span>
       </div>
@@ -109,7 +96,7 @@ const DBConnect = () => {
       <h3 className={styles.head}>EDIT and DELETE existing Database</h3>
       <p className={styles.paragraph}>After complition of database creation, if you want to do any editing or deletion in existing databases.</p>
       <p className={styles.paragraph}>Then, click this icon 'EYE' icon on corresponding Database.</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='edit'> 
         <Image src={DbEditDelete} alt='Eye Icon on DB' className={styles.img}/>
       </span>
       </div>
@@ -120,7 +107,7 @@ const DBConnect = () => {
       <p className={styles.paragraph}>For that click the EDIT Button.</p>
       <p className={styles.paragraph}>After editing again make Test and Register as same as we done before.</p>
       <p className={styles.paragraph}>Now all the changes will be applied in the existing database.</p>
-      <span className={styles.image}> 
+      <span className={styles.image} id='delete'> 
         <Image src={DbEdit} alt='Edit Screen' className={styles.img}/>
       </span>
       </div>
@@ -139,6 +126,43 @@ const DBConnect = () => {
       <span className={styles.image}> 
         <Image src={DeleteConformationMessage} alt='Delete DB Successful' className={styles.img}/>
       </span>
+      </div>
+      </div>
+
+      <div className={styles.sub}>
+      <ul className={styles.unOrderedList}>
+        <h3 className={styles.content}>On this page</h3>
+           <li><Link href='#create-db' className={styles.rightlink}>
+              Create DB Connection
+           </Link>
+           </li>
+
+          <li><Link href='#testing' className={styles.rightlink}>
+            Database Testing 
+            </Link></li>
+
+          <li><Link href='#register' className={styles.rightlink}>
+            Database Register 
+            </Link></li> 
+
+          <li><Link href='#list-db' className={styles.rightlink}>
+            Created DB
+          </Link></li>  
+
+          <li><Link href='#edit-delete' className={styles.rightlink}>
+            EDIT and DELETE 
+            </Link>
+            <ul className={styles.unOrderedList}>
+              <li><Link href='#edit' className={styles.rightlink}>
+                EDIT
+                </Link></li>
+              <li><Link href='#delete'className={styles.rightlink} >
+                Delete
+                </Link></li>
+           </ul>
+          </li>
+        
+        </ul>
       </div>
      </div>
   )
