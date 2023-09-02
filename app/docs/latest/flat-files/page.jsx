@@ -1,53 +1,35 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from "./page.module.css";
-import SelectFF from "../../public/selectFf.png";
-import UploadWindow from "../../public/chooseCSV.png";
-import SelectCsvFile from "../../public/csvFileFolder.png";
-import UploadUpdate from "../../public/uploadUpdate.png";
-import PreviewPage from "../../public/previewPage.png";
-import PreviewFlatFiles from "../../public/previewFF.png";
-import Save from "../../public/fileSave.png";
-import SaveNotify from "../../public/fileSaveSuccess.png";
-import SaveOptions from "../../public/saveOption.png";
-import NotUploadFile from "../../public/fileNotUpload.png";
-import PreviewEditing from "../../public/editPreviewFf.png";
-import FlatFileDisplay from "../../public/savedFlatFile.png";
-import TrashIcon from "../../public/hoverTrashCan.png";
-import DeleteConformation from "../../public/deleteFfConform.png";
-import DeleteFF from "../../public/deletedFF.png";
-import DataTypeCorrection from "../../public/datatypeCorrectionConformation.png";
+import Link from 'next/link';
+import SelectFF from "../../../../public/selectFf.png";
+import UploadWindow from "../../../../public/chooseCSV.png";
+import SelectCsvFile from "../../../../public/csvFileFolder.png";
+import UploadUpdate from "../../../../public/uploadUpdate.png";
+import PreviewPage from "../../../../public/previewPage.png";
+import PreviewFlatFiles from "../../../../public/previewFF.png";
+import Save from "../../../../public/fileSave.png";
+import SaveNotify from "../../../../public/fileSaveSuccess.png";
+import SaveOptions from "../../../../public/saveOption.png";
+import NotUploadFile from "../../../../public/fileNotUpload.png";
+import PreviewEditing from "../../../../public/editPreviewFf.png";
+import FlatFileDisplay from "../../../../public/savedFlatFile.png";
+import TrashIcon from "../../../../public/hoverTrashCan.png";
+import DeleteConformation from "../../../../public/deleteFfConform.png";
+import DeleteFF from "../../../../public/deletedFF.png";
+import DataTypeCorrection from "../../../../public/datatypeCorrectionConformation.png";
 
 const page = () => {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.main}>
+    
       <h2 className={styles.heading}>Connect to Data via Flat Files</h2>
-      <h3 className={styles.head}>In this article</h3>
-      <ol>
-          <li><p className={styles.paragraph}>Upload Flat File</p></li>
-          <li><p className={styles.paragraph}>Preview Changes</p>
-             <ul className={styles.unOrderList}>
-              <li>Editing the Data</li>
-              <li>Preview Changes Options</li>
-             </ul>
-          </li>
-          <li><p className={styles.paragraph}>Save</p>
-            <ul className={styles.unOrderList}>
-              <li>Save Options</li>
-              <li>Solve Datatype Error</li>
-            </ul>
-          </li>
-          <li><p className={styles.paragraph}>List of Created Flat Files</p></li>
-          <li><p className={styles.paragraph}>DELETE existing Flat Files</p></li>
-      </ol>
-      </div>
-        
-        <div className={styles.margin}>
+        <div>
         <p className={styles.paragraph}>In Silzila you can upload your flat file in .CSV extension, 
           if your flat file is on any other extension, first convert it into .CSV extension and then do upload.</p>
         <p className={styles.paragraph}>To connect to flat files from the Home screen, click '+' button in Flat Files.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='upload'> 
         <Image src={SelectFF} alt='+ Button in FlatFiles' className={styles.img}/>
         </span>
         </div>
@@ -83,7 +65,7 @@ const page = () => {
         <div className={styles.margin}>
         <p className={styles.paragraph}>If you click upload button without choose any file, then you will get 'please select a file to upload' notification.</p>
         <p className={styles.paragraph}>The following window is the notification window,</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='preview-changes'> 
         <Image src={NotUploadFile} alt='csvFileSelectionWindow' className={styles.img}/>
         </span>
         </div>
@@ -94,7 +76,7 @@ const page = () => {
         <p className={styles.paragraph}>Here, If you want to change something in your file, you can change it before upload. For example,</p>
         <p className={styles.paragraph}>Here, you can Edit a Title, Edit a table name, Change a DataType and also 
           you can Change a Date Format, Timestamp Format and Timestamp NTZ Format.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='edit'> 
         <Image src={PreviewPage} alt='csvFileSelectionWindow' className={styles.img}/>
         </span>
         </div>
@@ -107,7 +89,7 @@ const page = () => {
         <p className={styles.paragraph}>Date Format - You can Order Date by 	DD/MM/YY, YY/MM/DD and MM/DD/YY according for your wish.</p>
         <p className={styles.paragraph}>Timestamp Format - You can change a Timestamp Format according for wish.</p>
         <p className={styles.paragraph}>Timestamp NTZ Format - You can change a Timestamp NTZ Format according for wish.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='pc'> 
         <Image src={PreviewEditing} alt='csvFileSelectionWindow' className={styles.img}/>
         </span>
         </div>
@@ -122,7 +104,7 @@ const page = () => {
            then you do the same process as we done before for uploading a file.</p>
         <p className={styles.paragraph}>3. Cancel - In preview changes window you thing you don't want to upload any FlatFiles,
            then click 'CANCLE' option on preview changes drop down, then the process get stoped. It will redirect you to home page.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='save'> 
         <Image src={PreviewFlatFiles} alt='csvFileSelectionWindow' className={styles.img}/>
         </span> 
         </div> 
@@ -131,7 +113,7 @@ const page = () => {
         <h3 className={styles.head}>Save</h3>
         <p className={styles.paragraph}>After you click on the PREVIEW CHANGES button, you will get the following window,</p>
         <p className={styles.paragraph}>In save window, all previewed data will be displayed.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='sv'> 
         <Image src={Save} alt='csvFileSelectionWindow' className={styles.img}/>
         </span> 
         </div>
@@ -154,7 +136,7 @@ const page = () => {
         <div className={styles.margin}>
         <p className={styles.paragraph}>After your flat file is saved, you will get a notification that the 'flat file saved successfully'.</p>
         <p className={styles.paragraph}>The following window is the notification window,</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='sve'> 
         <Image src={SaveNotify} alt='csvFileSelectionWindow' className={styles.img}/>
         </span>
         </div>
@@ -168,7 +150,7 @@ const page = () => {
           for solve the problem make it's datatype as text.</p>
         <p className={styles.paragraph}>Then the file will be save properly.</p>
         <p className={styles.paragraph}>This is how you solve the data type error's in Silzila.</p>  
-        <span className={styles.image}> 
+        <span className={styles.image} id='created-files'> 
         <Image src={DataTypeCorrection} alt='csvFileSelectionWindow' className={styles.img}/>
         </span>
         </div>
@@ -177,7 +159,7 @@ const page = () => {
         <h3 className={styles.head}>List of Flat Files</h3>
         <p className={styles.paragraph}>After clicking the save button your file will be successfully saved to Silzila and it will be displayed on your home page
           Flat Files option.</p>
-        <span className={styles.image}> 
+        <span className={styles.image} id='delete'> 
          <Image src={FlatFileDisplay} alt='Flat File display in home page' className={styles.img}/>
         </span>
         </div>
@@ -206,6 +188,46 @@ const page = () => {
          <Image src={DeleteFF} alt='Flat File display in home page' className={styles.img}/>
       </span>
       </div>
+      </div>
+
+      <div className={styles.sub}>
+      <ul className={styles.unOrderedList}>
+        <h3 className={styles.content}>On this page</h3>
+           <li><Link href='#upload' className={styles.rightlink}>
+            Upload File
+           </Link></li>
+           
+           <li><Link href='#preview-changes' className={styles.rightlink}>Preview Changes</Link>
+            <ul className={styles.unOrderedList}>
+              <li><Link href='#edit' className={styles.rightlink}>
+              Edit Data
+                </Link></li>
+              <li><Link href='#pc'className={styles.rightlink} >
+              PC Options
+                </Link></li>
+           </ul>
+          </li>
+
+          <li><Link href='#save' className={styles.rightlink}>Save</Link>
+            <ul className={styles.unOrderedList}>
+              <li><Link href='#sv' className={styles.rightlink}>
+              Save Options 
+                </Link></li>
+              <li><Link href='#sve'className={styles.rightlink} >
+              Solve Errors
+                </Link></li>
+           </ul>
+          </li>
+
+          <li><Link href='#created-files' className={styles.rightlink}>
+          Created Files
+            </Link></li>
+
+          <li><Link href='#delete' className={styles.rightlink}>
+          Delete Files
+          </Link></li>
+        </ul>
+   </div>
     </div>
   )
 }
